@@ -1,0 +1,27 @@
+:root {
+  /* Типографика */
+  --font-family: sans-serif;
+  --base-font-size: 18px;
+  --font-weight-bold: bold;
+
+  /* Цвета */
+  --color-azure: azure;
+  --color-accent: #ff7400;
+  --color-stat-accent: #d28535;
+  --color-stat-label: #222;
+
+  /* Тени */
+  --shadow-button: 0.25rem 0.25rem #121212;
+  --shadow-card: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  --shadow-menu-card: 0 2px 6px rgba(0, 0, 0, 0.8);
+  --shadow-menu-img: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --shadow-circle: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  /* Кнопки */
+  --button-width: 140px;
+  --button-height: 40px;
+  --button-border: 0.125rem solid #121212;
+
+  /* Размеры */
+  --card-padding: 40px;
+}

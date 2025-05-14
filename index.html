@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дом лучшей еды</title>
+    <link rel="stylesheet" href="variables.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li>
+            <a href="">главная</a>
+          </li>
+          <li>
+            <a href="">меню</a>
+          </li>
+          <li>
+            <a href="">о нас</a>
+          </li>
+          <li>
+            <a href="">бронь</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="tel:+99995555555">+9 999 555 5555</a>
+          </li>
+          <li>
+            <span>Свяжитесь с нами для бронирования</span>
+          </li>
+        </ul>
+        <button class="button">заказ столика</button>
+      </nav>
+      <div class="ourrest">
+        <span>Добро пожаловать в </span>
+        <span>Наш ресторан</span>
+        <p>— ДОМ ЛУЧШЕЙ ЕДЫ —</p>
+      </div>
+    </header>
+    <main>
+      <ul class="card-list">
+        <li class="card">
+          <img src="image/Mask Group.png" alt="" />
+          <h2>Магическая Атмосфера</h2>
+          <p>
+            В нашем заведении царит магическая атмосфера наполненная вкусными
+            ароматами
+          </p>
+        </li>
+        <li class="card">
+          <img src="image/Mask Group.png" alt="" />
+          <h2>Лучшее качество Еды</h2>
+          <p>Качество нашей Еды - отменное!</p>
+        </li>
+        <li class="card">
+          <img src="image/Mask Group.png" alt="" />
+          <h2>Недорогая Еда</h2>
+          <p>
+            Стоимость нашей Еды зависит только от ее количества. Качество всегда
+            на высоте!
+          </p>
+        </li>
+      </ul>
+      <section class="history">
+        <div class="history-place">
+          <h3>Наша История</h3>
+          <p>
+            Как и&nbsp;у&nbsp;любого другого самобытного места, у&nbsp;нас есть
+            своя, особая история. Идея ресторана пришла основателям неожиданно.
+            Во&nbsp;время прогулки по&nbsp;лесу создатель нашего ресторана
+            застрял в&nbsp;сотнях километров от&nbsp;ближайшего населенного
+            пункта. Вдали от&nbsp;цивилизации и&nbsp;связи им&nbsp;пришлось
+            навремя обустровать себе нехитрый быт, добывать и&nbsp;готовить себе
+            еду.
+          </p>
+          <div class="our-history__stats">
+            <div class="stat">
+              <div class="stat__number">93</div>
+              <div class="stat__label">Напитки</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">206</div>
+              <div class="stat__label">Еда</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number">71</div>
+              <div class="stat__label">Закуски</div>
+            </div>
+          </div>
+        </div>
+        <div class="collage">
+          <div class="item item-1">
+            <img src="/image/233] 1.png" alt="Фото 1" />
+          </div>
+          <div class="item item–2">
+            <img src="/image/255 1.png" alt="Фото 2" />
+          </div>
+          <div class="item item–3">
+            <img src="/image/430 1.png" alt="Фото 3" />
+          </div>
+        </div>
+      </section>
+      <section class="promo-banner">
+        <div class="promo-banner__overlay"></div>
+        <div class="promo-banner__content">
+          <h2 class="promo-banner__title">
+            Отпразднуйте в одном из самых лучших ресторанов.
+          </h2>
+          <p class="promo-banner__subtitle">
+            Только в этом месяце бизнес-ланч от 250 ₽
+          </p>
+        </div>
+        <button href="#reservation" class="button">Заказ столика</button>
+      </section>
+      <section class="menu">
+        <ul class="menu-list">
+          <li class="menu-card">
+            <div>
+              <img src="/image/gamburger.png" alt="" />
+              <div class="price-circle">420</div>
+            </div>
+            <h3>Гамбургер макси</h3>
+            <p>Максимально толстый слой мяса</p>
+            <button class="button">заказать</button>
+          </li>
+          <li class="menu-card">
+            <div>
+              <img src="/image/gamburger.png" alt="" />
+              <div class="price-circle">420</div>
+            </div>
+            <h3>Гамбургер макси</h3>
+            <p>Максимально толстый слой мяса</p>
+            <button class="button">заказать</button>
+          </li>
+          <li class="menu-card">
+            <div>
+              <img src="/image/gamburger.png" alt="" />
+              <div class="price-circle">420</div>
+            </div>
+            <h3>Гамбургер макси</h3>
+            <p>Максимально толстый слой мяса</p>
+            <button class="button">заказать</button>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <div id="booking-modal" class="modal-overlay">
+      <div class="modal">
+        <button class="modal__close">&times;</button>
+        <h2>Выберите дату и время</h2>
+        <form id="booking-form">
+          <label>
+            Дата и время:
+            <input type="datetime-local" name="datetime" required />
+          </label>
+          <button class="button" type="submit">Подтвердить</button>
+        </form>
+        <div id="booking-confirmation" class="modal__confirmation"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
