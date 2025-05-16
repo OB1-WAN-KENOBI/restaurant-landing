@@ -4,27 +4,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.querySelector(".carousel__btn--prev");
   const nextButton = document.querySelector(".carousel__btn--next");
 
-  // Задаём шаг прокрутки в пикселях:
-  const scrollStep = 305; // например, 250px за клик
-
-  // Функция для чтения текущего смещения по X из transform
-  function getCurrentX() {
-    const style = window.getComputedStyle(track);
-    const matrix = new DOMMatrixReadOnly(style.transform);
-    return Math.abs(matrix.m41);
+  if (!track || !trackContainer || !prevButton || !nextButton) {
+    console.error("Carousel elements not found");
+    return;
   }
 
+  const card = document.querySelector(".menu-card");
+  const scrollStep = card ? card.offsetWidth + 30 : 305;
+  let currentX = 0;
+  let isAnimating = false;
+
   nextButton.addEventListener("click", () => {
-    const currentX = getCurrentX();
+    if (isAnimating) return;
+    isAnimating = true;
     const maxScroll = track.scrollWidth - trackContainer.clientWidth;
-    // не уезжаем дальше, чем может прокрутить контейнер
-    const newX = Math.min(currentX + scrollStep, maxScroll);
-    track.style.transform = `translateX(-${newX}px)`;
+    currentX = Math.min(currentX + scrollStep, maxScroll);
+    track.style.transform = `translateX(-${currentX}px)`;
+    setTimeout(() => (isAnimating = false), 500);
   });
 
   prevButton.addEventListener("click", () => {
-    const currentX = getCurrentX();
-    const newX = Math.max(currentX - scrollStep, 0);
-    track.style.transform = `translateX(-${newX}px)`;
+    if (isAnimating) return;
+    isAnimating = true;
+    currentX = Math.max(currentX - scrollStep, 0);
+    track.style.transform = `translateX(-${currentX}px)`;
+    setTimeout(() => (isAnimating = false), 500);
+  });
+
+  window.addEventListener("resize", () => {
+    const maxScroll = track.scrollWidth - trackContainer.clientWidth;
+    if (currentX > maxScroll) {
+      currentX = maxScroll;
+      track.style.transform = `translateX(-${currentX}px)`;
+    }
   });
 });

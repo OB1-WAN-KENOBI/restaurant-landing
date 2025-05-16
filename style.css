@@ -7,7 +7,7 @@
 
 .header {
   color: var(--color-azure);
-  background-image: url(/image/hero\ image.png);
+  background-image: url(/image/heroimage.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -364,11 +364,9 @@ div span:nth-child(2) {
 
 .carousel__btn--prev {
   right: 940px;
-  
 }
 .carousel__btn--next {
   left: 940px;
-  
 }
 
 .carousel__track > * {
@@ -378,4 +376,4 @@ div span:nth-child(2) {
 .carousel__btn:active {
   transform: translate(0.125rem, 0.125rem);
   box-shadow: 0.125rem 0.125rem #121212;
- }
+}

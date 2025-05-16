@@ -199,8 +199,16 @@
         <h2>Выберите дату и время</h2>
         <form id="booking-form">
           <label>
+            Имя:
+            <input type="text" name="name" required>
+          </label>
+          <label>
             Дата и время:
             <input type="datetime-local" name="datetime" required />
+          </label>
+          <label>
+            Количество гостей:
+            <input type="number" name="guests" min="1" required>
           </label>
           <button class="button" type="submit">Подтвердить</button>
         </form>
