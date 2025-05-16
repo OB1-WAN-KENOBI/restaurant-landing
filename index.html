@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -116,35 +116,81 @@
         <button href="#reservation" class="button">Заказ столика</button>
       </section>
       <section class="menu">
-        <ul class="menu-list">
-          <li class="menu-card">
-            <div>
-              <img src="/image/gamburger.png" alt="" />
-              <div class="price-circle">420</div>
-            </div>
-            <h3>Гамбургер макси</h3>
-            <p>Максимально толстый слой мяса</p>
-            <button class="button">заказать</button>
-          </li>
-          <li class="menu-card">
-            <div>
-              <img src="/image/gamburger.png" alt="" />
-              <div class="price-circle">420</div>
-            </div>
-            <h3>Гамбургер макси</h3>
-            <p>Максимально толстый слой мяса</p>
-            <button class="button">заказать</button>
-          </li>
-          <li class="menu-card">
-            <div>
-              <img src="/image/gamburger.png" alt="" />
-              <div class="price-circle">420</div>
-            </div>
-            <h3>Гамбургер макси</h3>
-            <p>Максимально толстый слой мяса</p>
-            <button class="button">заказать</button>
-          </li>
-        </ul>
+        <div class="carousel">
+          <button class="carousel__btn carousel__btn--prev" aria-label="Назад">
+            &larr;
+          </button>
+          <div class="carousel__track-container">
+            <ul class="carousel__track">
+              <li class="menu-card">
+                <div>
+                  <img src="/image/gamburger.png" alt="" />
+                  <div class="price-circle">420</div>
+                </div>
+                <h3>Гамбургер макси</h3>
+                <p>Максимально толстый слой мяса</p>
+                <button class="button">заказать</button>
+              </li>
+              <li class="menu-card">
+                <div>
+                  <img src="/image/gamburger.png" alt="" />
+                  <div class="price-circle">420</div>
+                </div>
+                <h3>Гамбургер макси</h3>
+                <p>Максимально толстый слой мяса</p>
+                <button class="button">заказать</button>
+              </li>
+              <li class="menu-card">
+                <div>
+                  <img src="/image/gamburger.png" alt="" />
+                  <div class="price-circle">420</div>
+                </div>
+                <h3>Гамбургер макси</h3>
+                <p>Максимально толстый слой мяса</p>
+                <button class="button">заказать</button>
+              </li>
+              <li class="menu-card">
+                <div>
+                  <img src="/image/gamburger.png" alt="" />
+                  <div class="price-circle">420</div>
+                </div>
+                <h3>Гамбургер макси</h3>
+                <p>Максимально толстый слой мяса</p>
+                <button class="button">заказать</button>
+              </li>
+              <li class="menu-card">
+                <div>
+                  <img src="/image/gamburger.png" alt="" />
+                  <div class="price-circle">420</div>
+                </div>
+                <h3>Гамбургер макси</h3>
+                <p>Максимально толстый слой мяса</p>
+                <button class="button">заказать</button>
+              </li>
+              <li class="menu-card">
+                <div>
+                  <img src="/image/gamburger.png" alt="" />
+                  <div class="price-circle">420</div>
+                </div>
+                <h3>Гамбургер макси</h3>
+                <p>Максимально толстый слой мяса</p>
+                <button class="button">заказать</button>
+              </li>
+              <li class="menu-card">
+                <div>
+                  <img src="/image/gamburger.png" alt="" />
+                  <div class="price-circle">420</div>
+                </div>
+                <h3>Гамбургер макси</h3>
+                <p>Максимально толстый слой мяса</p>
+                <button class="button">заказать</button>
+              </li>
+            </ul>
+          </div>
+          <button class="carousel__btn carousel__btn--next" aria-label="Вперёд">
+            &rarr;
+          </button>
+        </div>
       </section>
     </main>
     <div id="booking-modal" class="modal-overlay">
@@ -162,5 +208,6 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script src="carousel.js"></script>
   </body>
 </html>

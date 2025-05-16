@@ -225,15 +225,25 @@ div span:nth-child(2) {
 } */
 
 .menu {
-  margin-block-start: 150px;
   display: flex;
+  margin-block-start: 150px;
   background-image: url(/image/bar.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
   justify-content: space-around;
+  position: relative;
+  align-items: center;
+  max-width: 922px;
 }
 
 .menu-card {
-  width: 315px;
+  width: 275px;
   height: 490px;
   display: flex;
   flex-direction: column;
@@ -244,10 +254,10 @@ div span:nth-child(2) {
   box-shadow: var(--shadow-menu-card);
 }
 
-.menu-list {
+.carousel__track {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 30px;
 }
 
 .menu-card img {
@@ -326,3 +336,46 @@ div span:nth-child(2) {
   font-size: var(--base-font-size);
   display: none; /* скрыто по умолчанию */
 }
+
+.carousel__track-container {
+  overflow: hidden;
+}
+.carousel__track {
+  padding-inline-start: 15px;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  box-shadow: var(--shadow-button);
+  background: var(--color-accent);
+  border: var(--button-border);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #fff;
+  z-index: 10;
+  transition: transform 50ms, box-shadow 50ms;
+}
+
+.carousel__btn--prev {
+  right: 940px;
+  
+}
+.carousel__btn--next {
+  left: 940px;
+  
+}
+
+.carousel__track > * {
+  flex: 0 0 auto;
+}
+
+.carousel__btn:active {
+  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0.125rem 0.125rem #121212;
+ }
