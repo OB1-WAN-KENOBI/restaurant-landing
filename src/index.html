@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Дом лучшей еды</title>
-    <link rel="stylesheet" href="variables.css" />
-    <link rel="stylesheet" href="style.css" />
+    <script defer src="bundle.js"></script>
+    <script defer src="bundle.js"></script>
+    <script defer src="bundle.js"></script>
+    <script defer src="bundle.js"></script>
+    <script defer src="bundle.js"></script>
+    <script defer src="bundle.js"></script>
   </head>
   <body>
     <header class="header">
@@ -43,7 +47,7 @@
     <main>
       <ul class="card-list">
         <li class="card">
-          <img src="image/Mask Group.png" alt="" />
+          <img alt="" />
           <h2>Магическая Атмосфера</h2>
           <p>
             В нашем заведении царит магическая атмосфера наполненная вкусными
@@ -51,12 +55,12 @@
           </p>
         </li>
         <li class="card">
-          <img src="image/Mask Group.png" alt="" />
+          <img alt="" />
           <h2>Лучшее качество Еды</h2>
           <p>Качество нашей Еды - отменное!</p>
         </li>
         <li class="card">
-          <img src="image/Mask Group.png" alt="" />
+          <img alt="" />
           <h2>Недорогая Еда</h2>
           <p>
             Стоимость нашей Еды зависит только от ее количества. Качество всегда
@@ -92,15 +96,9 @@
           </div>
         </div>
         <div class="collage">
-          <div class="item item-1">
-            <img src="/image/233] 1.png" alt="Фото 1" />
-          </div>
-          <div class="item item–2">
-            <img src="/image/255 1.png" alt="Фото 2" />
-          </div>
-          <div class="item item–3">
-            <img src="/image/430 1.png" alt="Фото 3" />
-          </div>
+          <div class="item item-1"><img alt="Фото 1" /></div>
+          <div class="item item-2"><img alt="Фото 2" /></div>
+          <div class="item item-3"><img alt="Фото 3" /></div>
         </div>
       </section>
       <section class="promo-banner">
@@ -123,8 +121,8 @@
           <div class="carousel__track-container">
             <ul class="carousel__track">
               <li class="menu-card">
-                <div>
-                  <img src="/image/gamburger.png" alt="" />
+                <div class="hamburger">
+                  <img alt="" />
                   <div class="price-circle">420</div>
                 </div>
                 <h3>Гамбургер макси</h3>
@@ -133,7 +131,7 @@
               </li>
               <li class="menu-card">
                 <div>
-                  <img src="/image/gamburger.png" alt="" />
+                  <img alt="" />
                   <div class="price-circle">420</div>
                 </div>
                 <h3>Гамбургер макси</h3>
@@ -142,7 +140,7 @@
               </li>
               <li class="menu-card">
                 <div>
-                  <img src="/image/gamburger.png" alt="" />
+                  <img alt="" />
                   <div class="price-circle">420</div>
                 </div>
                 <h3>Гамбургер макси</h3>
@@ -200,7 +198,7 @@
         <form id="booking-form">
           <label>
             Имя:
-            <input type="text" name="name" required>
+            <input type="text" name="name" required />
           </label>
           <label>
             Дата и время:
@@ -208,14 +206,13 @@
           </label>
           <label>
             Количество гостей:
-            <input type="number" name="guests" min="1" required>
+            <input type="number" name="guests" min="1" required />
           </label>
           <button class="button" type="submit">Подтвердить</button>
         </form>
         <div id="booking-confirmation" class="modal__confirmation"></div>
       </div>
     </div>
-    <script src="script.js"></script>
-    <script src="carousel.js"></script>
+    <script src="bundle.js"></script>
   </body>
 </html>
