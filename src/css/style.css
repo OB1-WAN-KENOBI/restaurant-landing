@@ -210,19 +210,6 @@ div span:nth-child(2) {
   margin-bottom: 20px;
 }
 
-/* Адаптивность */
-/* @media (max-width: 600px) {
-  .promo-banner {
-    height: auto;
-    padding: 60px 0;
-  }
-  .promo-banner__title {
-    font-size: 1.5rem;
-  }
-  .promo-banner__subtitle {
-    font-size: 0.9rem;
-  }
-} */
 
 .menu {
   display: flex;
@@ -376,4 +363,138 @@ div span:nth-child(2) {
 .carousel__btn:active {
   transform: translate(0.125rem, 0.125rem);
   box-shadow: 0.125rem 0.125rem #121212;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card-list {
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 30px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .history {
+    grid-template-columns: 1fr;
+    padding-inline: 20px;
+  }
+
+  .promo-banner {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .promo-banner__title {
+    font-size: 1.5rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    height: auto;
+    margin-block-start: 60px;
+  }
+
+  .carousel__btn {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
+
+  .menu-card {
+    width: 240px;
+    height: auto;
+  }
+
+  .menu-card img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .carousel__track-container {
+    overflow-x: scroll;
+  }
+
+  .carousel__track {
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 20px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .carousel__track-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .carousel__track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 15px;
+    padding: 10px;
+    margin-left: 0;
+    transition: none;
+    transform: none !important;
+  }
+
+  .carousel__btn {
+    display: none;
+  }
+
+  .menu-card {
+    flex: 0 0 auto;
+    width: 260px;
+    min-width: 260px;
+    height: auto;
+  }
+
+  .menu-card img {
+    width: 180px;
+    height: 180px;
+  }
+  .collage {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .collage .item {
+    position: static; /* отключаем абсолютное позиционирование */
+    transform: none;  /* убираем повороты */
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+  }
+  
+  .collage .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    
+  }
+  
 }
