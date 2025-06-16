@@ -38,4 +38,38 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.2 }
   );
   cards.forEach((card) => observer.observe(card));
+
+  // Intersection Observer для секций
+  [".history", ".promo-banner", ".carousel", ".menu"].forEach((selector) => {
+    const section = document.querySelector(selector);
+    if (section) {
+      section.classList.remove("visible");
+      const secObs = new window.IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      secObs.observe(section);
+    }
+  });
+
+  // Плавный скролл по якорям
+  document.querySelectorAll('.nav-list a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href").replace("#", "");
+      const target =
+        document.getElementById(targetId) ||
+        document.querySelector(`[name='${targetId}']`);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
 });

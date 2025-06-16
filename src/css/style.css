@@ -23,6 +23,11 @@
   align-items: center;
   gap: 70px;
   padding-top: 15px;
+  position: sticky;
+  top: 0;
+  background: var(--color-nav-bg, rgba(0, 0, 0, 0.7));
+  z-index: 100;
+  backdrop-filter: blur(6px);
 }
 
 .nav-list {
@@ -114,6 +119,15 @@ div span:nth-child(2) {
   margin-block-start: 125px;
   padding-inline: 80px;
   gap: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.history.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .collage {
@@ -198,6 +212,15 @@ div span:nth-child(2) {
   align-items: center;
   justify-content: space-around;
   margin-block-start: 140px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.promo-banner.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .promo-banner__overlay {
@@ -235,6 +258,15 @@ div span:nth-child(2) {
   background-size: cover;
   height: 100vh;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .carousel {
@@ -561,4 +593,9 @@ div span:nth-child(2) {
   100% {
     background-position: -200% 0;
   }
+}
+
+/* --- Плавный скролл --- */
+html {
+  scroll-behavior: smooth;
 }

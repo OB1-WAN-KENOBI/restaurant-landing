@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = modalOverlay.querySelector(".modal__close");
   const form = document.getElementById("booking-form");
   const confirmation = document.getElementById("booking-confirmation");
-  const orderButtons = document.querySelectorAll(
-    ".menu-card .button, .header .button, .promo-banner .button"
-  );
+  const orderButtons = Array.from(
+    document.querySelectorAll(
+      ".menu-card .button, .header .button, .promo-banner .button"
+    )
+  ).filter((btn) => btn.id !== "theme-toggle");
   const firstInput = form.querySelector("input, select, textarea");
 
   function openModal() {
