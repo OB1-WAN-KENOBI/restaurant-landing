@@ -6,18 +6,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderButtons = document.querySelectorAll(
     ".menu-card .button, .header .button, .promo-banner .button"
   );
+  const firstInput = form.querySelector("input, select, textarea");
 
-  orderButtons.forEach((btn) =>
-    btn.addEventListener("click", () => {
-      modalOverlay.classList.add("active");
-    })
-  );
+  function openModal() {
+    modalOverlay.classList.add("active");
+    setTimeout(() => {
+      if (firstInput) firstInput.focus();
+    }, 200);
+    document.addEventListener("keydown", handleEscClose);
+  }
 
-  closeBtn.addEventListener("click", () => {
-    modalOverlay.classList.remove("active");
-  });
+  function closeModal() {
+    modalOverlay.classList.add("closing");
+    setTimeout(() => {
+      modalOverlay.classList.remove("active", "closing");
+    }, 400); // время совпадает с transition в CSS
+    document.removeEventListener("keydown", handleEscClose);
+  }
+
+  function handleEscClose(e) {
+    if (e.key === "Escape") closeModal();
+  }
+
+  orderButtons.forEach((btn) => btn.addEventListener("click", openModal));
+
+  closeBtn.addEventListener("click", closeModal);
   modalOverlay.addEventListener("click", (e) => {
-    if (e.target === modalOverlay) modalOverlay.classList.remove("active");
+    if (e.target === modalOverlay) closeModal();
   });
 
   form.addEventListener("submit", (e) => {
@@ -35,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
     setTimeout(() => {
       confirmation.style.display = "none";
-      modalOverlay.classList.remove("active");
+      closeModal();
     }, 3000);
   });
 });
