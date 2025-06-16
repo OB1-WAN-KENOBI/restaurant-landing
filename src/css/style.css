@@ -210,7 +210,6 @@ div span:nth-child(2) {
   margin-bottom: 20px;
 }
 
-
 .menu {
   display: flex;
   margin-block-start: 150px;
@@ -227,6 +226,15 @@ div span:nth-child(2) {
   position: relative;
   align-items: center;
   max-width: 922px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .menu-card {
@@ -282,6 +290,14 @@ div span:nth-child(2) {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
 .modal {
   background: #fff;
@@ -290,6 +306,14 @@ div span:nth-child(2) {
   max-width: 320px;
   width: 90%;
   box-shadow: var(--shadow-card);
+  transform: translateY(-40px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-overlay.active .modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
 .modal__close {
   background: transparent;
@@ -481,20 +505,18 @@ div span:nth-child(2) {
     gap: 20px;
     margin-top: 20px;
   }
-  
+
   .collage .item {
     position: static; /* отключаем абсолютное позиционирование */
-    transform: none;  /* убираем повороты */
+    transform: none; /* убираем повороты */
     width: 80%;
     max-width: 300px;
     height: auto;
   }
-  
+
   .collage .item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    
   }
-  
 }

@@ -3,11 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const trackContainer = document.querySelector(".carousel__track-container");
   const prevButton = document.querySelector(".carousel__btn--prev");
   const nextButton = document.querySelector(".carousel__btn--next");
+  const carousel = document.querySelector(".carousel");
 
-  if (!track || !trackContainer || !prevButton || !nextButton) {
+  if (!track || !trackContainer || !prevButton || !nextButton || !carousel) {
     console.error("Carousel elements not found");
     return;
   }
+
+  // Плавное появление карусели
+  setTimeout(() => {
+    carousel.classList.add("visible");
+  }, 100);
 
   const card = document.querySelector(".menu-card");
   const scrollStep = card ? card.offsetWidth + 30 : 305;

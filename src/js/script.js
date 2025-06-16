@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   orderButtons.forEach((btn) =>
     btn.addEventListener("click", () => {
-      modalOverlay.style.display = "flex";
+      modalOverlay.classList.add("active");
     })
   );
 
   closeBtn.addEventListener("click", () => {
-    modalOverlay.style.display = "none";
+    modalOverlay.classList.remove("active");
   });
   modalOverlay.addEventListener("click", (e) => {
-    if (e.target === modalOverlay) modalOverlay.style.display = "none";
+    if (e.target === modalOverlay) modalOverlay.classList.remove("active");
   });
 
   form.addEventListener("submit", (e) => {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
     setTimeout(() => {
       confirmation.style.display = "none";
-      modalOverlay.style.display = "none";
+      modalOverlay.classList.remove("active");
     }, 3000);
   });
 });
